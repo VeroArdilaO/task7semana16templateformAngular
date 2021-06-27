@@ -1,6 +1,72 @@
-<p>blog works!</p>
-<div *ngFor="let post of posts" [ngStyle]="{'display': 'flex'}">
-  <span>{{post.id}}</span>
-  <span>{{post.title}}</span>
-  <span>{{post.body}}</span>
+
+<div class=" flex flex-col gap-5 place-items-center  bg-gray-300 h-full pt-24">
+  <div>
+      <h1 class="text-2xl font-bold p-5">TEMPLATE-DRIVEN-FORM</h1>
+  </div>
+  <form class="flex flex-col gap-2  place-items-center bg-purple-300  border-purple-500 border-4 h-4/5 w-3/12 text-center p-5" #forma= "ngForm" (ngSubmit)= "save()">
+      <label  class="text-lg font-bold p-5" for="id"> ID </label>
+      <input  
+      type="text"
+      #id="ngModel"
+      [(ngModel)]= "form.id"
+      name="id"
+      class="form-control"
+      required
+      [ngClass]="{'is-valid': !id.invalid,'is-invalid': id.invalid}"
+      >
+      <div class="invalid-feedback flex flex-row gap-2" *ngIf= "id.invalid && (id.dirty  || id.touched)">
+        <p class="validar text-red-500 font-bold"  *ngIf= "id.errors">this field is required</p>
+        <img src="https://img.icons8.com/ios-glyphs/30/fa314a/error--v1.png"/>
+      </div>
+      <label  class="text-lg font-bold p-5" for="title"> Title </label>
+      <input
+      type="text"
+      placeholder="Add a Title"
+      #title="ngModel"
+      [(ngModel)]= "form.title"
+      name="title"
+      class="form-control"
+      required
+      [ngClass]="{'is-valid': !title.invalid,'is-invalid': title.invalid}"
+      >
+
+      <div class="invalid-feedback flex flex-row gap-2" *ngIf= "title.invalid && (title.dirty  || title.touched)">
+        <p class="validar text-red-500 font-bold"  *ngIf= "title.errors">this field is required</p>
+        <img src="https://img.icons8.com/ios-glyphs/30/fa314a/error--v1.png"/>
+      </div>
+      <label  class="text-lg font-bold p-5" for="body"> Message </label>
+      <textarea
+      type="text"
+      placeholder="Leave a message"
+      #body="ngModel"
+      [(ngModel)]= "form.body"
+      name="title"
+      class="form-control"
+      required
+      [ngClass]="{'is-valid': !body.invalid,'is-invalid': body.invalid}"> 
+      </textarea>
+      <div class="invalid-feedback flex flex-row gap-2" *ngIf= "body.invalid && (body.dirty  || body.touched)">
+        <p class="validar text-red-500 font-bold"  *ngIf= "body.errors">this field is required</p> 
+        <img src="https://img.icons8.com/ios-glyphs/30/fa314a/error--v1.png"/>
+      </div>
+      <button class="bg-gray-300 rounded p-5 w-2/5 text-base font-bold border-4 border-purple-500 hover:border-gray-500 mt-10" [disabled]=!forma.valid>
+        Send
+      </button>
+  </form> 
+  <h1  class="text-2xl font-bold p-5"> POST </h1>
+  <div>
+      <ul  *ngFor="let post of posts" >
+        <li class="text-purple-500  text-lg font-bold p-2">ID</li>
+        <li class="text-lg font-bold p-2">{{post.id}} </li>
+        <li class="text-purple-500  text-lg font-bold p-2"> Title </li> 
+        <li class=" text-lg font-bold p-2">  {{post.title}} </li>
+        <li class="text-purple-500  text-lg font-bold p-2">  Message </li> 
+        <li class=" text-lg font-bold p-2">{{post.body}}  </li>
+        <hr class="hr">
+      </ul>
+  </div>
 </div>
+
+
+<!-- <pre> {{ posts | json }} </pre>  -->
+
