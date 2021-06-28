@@ -18,16 +18,16 @@ El otro componente es `BlogComponent` que consulta un listado de blog posts de p
 
 ## Vista inicial Home
 
-<img src="../bee-soft-countries/src/assets/click.PNG" alt="buttons">
+<img src="/src/assets/click.PNG" alt="buttons">
 
 ## Vista inicial template-drive-form
 
-<img src="../bee-soft-countries/src/assets/form.PNG" alt="form">
+<img src="/src/assets/form.PNG" alt="form">
 
 ## Vista campos requeridos
 
-<img src="../bee-soft-countries/src/assets/invalid-form.PNG" alt="invalid-form">
+<img src="/src/assets/invalid-form.PNG" alt="invalid-form">
 
 ## Vista post
 
-<img src="../bee-soft-countries/src/assets/post.PNG" alt="post">
+<img src="/src/assets/post.PNG" alt="post">
