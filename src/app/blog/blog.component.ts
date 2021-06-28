@@ -16,8 +16,8 @@ export class BlogComponent implements OnInit {
 
   form: IForm = {
     id: 0,
-    title:"Add text",
-    body:"Add text"
+    title:"add text",
+    body:"add text"
   }
 
   constructor(private _postService: PostService) {}
@@ -36,7 +36,8 @@ export class BlogComponent implements OnInit {
     const newBody = this.form.body
     this.posts.push({id: newId, title: newTitle, body:newBody})
     this.form.id = 0,
-    this.form.title = "add text",
-    this.form.body = "add text"
+    this.form.title = "",
+    this.form.body = ""
+    alert("Message Sent Succesfully!!")
   }
 }
