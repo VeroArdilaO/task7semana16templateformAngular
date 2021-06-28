@@ -2,14 +2,14 @@ input {
 
     padding: 5px;
     border-radius: 5px;
-    width: 400px;
+    width: 200px;
 }
    
 textarea {
 
     border-radius: 5px;
     height:200px;
-    width: 400px;
+    width: 300px;
     padding: 10px;
 }
 
